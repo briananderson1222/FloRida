@@ -3,7 +3,7 @@ require 'sinatra'
 use Rack::MethodOverride
 
 set :protection, :origin_whitelist => ['*']
-set :public_folder, File.expand_path("..", __FILE__) + "/UI"
+set :public_folder, File.expand_path("..", __FILE__) + "/UI/build"
 
 get '/' do
   "Hello World"
