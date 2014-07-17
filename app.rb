@@ -4,7 +4,7 @@ require_relative 'models/action_node'
 require_relative 'models/endpoint_node'
 require_relative 'util/env_reader'
 require_relative 'util/sms'
-
+require_relative 'models/flow_model'
 
 use Rack::MethodOverride
 
@@ -14,10 +14,10 @@ set :public_folder, File.expand_path("..", __FILE__) + "/UI/build"
 include SMS
 
 get '/' do
-  send_text_message('(505) 803-5099', "I'm watching you Brian!")
-  #847-951-4857
-  node = EndpointNode.new("URL!!", "sadsad", 'name', [], {},{})
-  puts node.inspect
+  #send_text_message('(505) 803-5099', "I'm watching you Brian!")
+  #node = EndpointNode.new("URL!!", "sadsad", 'name', [], {},{})
+  #node = FlowModel.new("sdfsd","dsfdsfds","fdsfdsfsd")
+  #puts node.inspect
 end
 
 
