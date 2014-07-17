@@ -1,12 +1,16 @@
 require 'sinatra'
 
+require_relative 'models/action_node'
+require_relative 'models/endpoint_node'
+
 use Rack::MethodOverride
 
 set :protection, :origin_whitelist => ['*']
 set :public_folder, File.expand_path("..", __FILE__) + "/UI/build"
 
 get '/' do
-  "Hello World"
+  node = EndpointNode.new("URL!!", "sadsad", 'name', [], {},{})
+  puts node.inspect
 end
 
 
