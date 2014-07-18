@@ -51,8 +51,10 @@ post '/flowmodel/?' do
     JSON.generate(flow.to_hash)
 end
 
-get '/flowmodel-flat/?' do
-
+get '/flowmodel-flat/:flow_id/?' do
+  flow = find_by_flow_id(params[:flow_id])
+  headers({ 'content-type' => 'application/json' })
+  JSON.generate(flow.flat)
 end
 
 before do
