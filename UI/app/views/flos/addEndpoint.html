@@ -5,15 +5,16 @@
 <div class="container">
 
     <div ng-controller="addEndPointController" >
-            <div><span >Name:</span> <input type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
+            <div class="endPointRow"><span>Name:</span> <input type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
 
-            <div><span>URL: </span><input type="text" name="endPointUrl"  ng-model="addEndPoint.url"> </div>
-            <div><span>Request Method:</span> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod" >
+            <div class="endPointRow"><span>URL: </span><input type="text" name="endPointUrl"  ng-model="addEndPoint.url"> </div>
+            <div class="endPointRow"><span>Request Method:</span> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod">
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
-                            </select></div>
+                            </select>
+            </div>
 
-            <div>Headers  <span ng-click="addHeader()">    Add</span></div>
+            <div class="endPointRow">Headers  <span ng-click="addHeader()">    Add</span></div>
 
             <ul>
             <li ng-repeat="header in headers">
@@ -26,7 +27,7 @@
                 </div>
             </li>
             </ul>
-        <div>Parameters  <span ng-click="addParameter()">Add</span></div>
+        <div class="endPointRow">Parameters  <span ng-click="addParameter()">Add</span></div>
         <ul>
             <li ng-repeat="parameter in parameters">
                 <div>
@@ -40,14 +41,14 @@
         </ul>
         <div>Request Body </div>
         <div>
-            <input type="text" name="requestBody" ng-model="requestBody"  value="" size="90" />
+            <textarea rows="4" cols="66"  name="requestBody" ng-model="requestBody"  value="" />
         </div>
 
-        <div>Save to Scratch Paper</div>
 
 
-
-        <div><span ng-click="saveEndPoint()">Save</span></div></div>
+        <div id="saveButton"><span ng-click="saveEndPoint()">Save</span></div>
     </div>
+
+
 
 </div>

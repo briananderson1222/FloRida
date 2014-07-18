@@ -1,3 +1,48 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+$floRidaFont: 'Oswald', sans-serif;
 
 @import 'sass-bootstrap/lib/bootstrap';
+
+body {
+  font-family: $floRidaFont;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.normal {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+label, button {
+  font-weight: 300;
+}
+
+.LabelFormCombo {
+  width: 12%;
+  text-align: left;
+}
+
+#saveButton {
+  text-align: center;
+  width: 400px;
+  padding-top: 30px;
+
+}
+
+.endPointRow {
+  padding-bottom: 10px;
+}
+
+.flo-node-row {
+  display: table-row;
+}
+
+.flo-node {
+  display: table-cell;
+  height: 150px;
+  width: 150px;
+}
