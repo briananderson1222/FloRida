@@ -10,7 +10,7 @@ require_relative 'dao/flow_model_dao'
 use Rack::MethodOverride
 
 set :protection, :origin_whitelist => ['*']
-set :public_folder, File.expand_path("..", __FILE__) + "/UI/build"
+set :public_folder, File.expand_path("..", __FILE__) + "/UI/app"
 
 include SMS
 include FlowModelDAO
