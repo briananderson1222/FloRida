@@ -35,6 +35,7 @@ angular.module('floRidaApp')
 
         $scope.addEndpoint = function() {
             var modalInstance = $modal.open({
+                controller:'addEndPointController',
                 templateUrl: 'views/flos/addEndpoint.html'
             });
             modalInstance.result.then();
@@ -57,17 +58,21 @@ angular.module('floRidaApp')
         $scope.getNodes();
     }])
 
-    .controller('addEndPointController', function ($scope) {
-        $scope.headers = [{key:'',value:''}];
+    .controller('addEndPointController', function ($scope, $modalInstance) {
+        $scope.addEndPoint = {};
+        $scope.addEndPoint.headers = [{key:'',value:''}];
 
         $scope.addHeader = function() {
-            $scope.headers.unshift({key:'',value:''});
+            $scope.addEndPoint.headers.unshift({key:'',value:''});
         };
-        $scope.parameters = [{key:'',value:''}];
+        $scope.addEndPoint.parameters = [{key:'',value:''}];
 
         $scope.addParameter = function() {
-            $scope.parameters.unshift({key:'',value:''});
+            $scope.addEndPoint.parameters.unshift({key:'',value:''});
         };
+        $scope.saveEndPoint = function() {
+            $modalInstance.close($scope.addEndPoint);
+        }
     })
 
     .controller('FloAddActionCtrl', function ($scope) {
