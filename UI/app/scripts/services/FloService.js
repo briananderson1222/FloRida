@@ -6,6 +6,7 @@
 angular.module('floRidaApp')
     .service('FloService', function() {
         var flo = {
+            id: '',
             name: '',
             scratch_paper: [],
             initial_node: {
@@ -65,12 +66,33 @@ angular.module('floRidaApp')
             return promise.then(successCallback, errorCallback);
         };
 
-        var getNodes = function(successCallback, errorCallback) {
-            return makeServiceRequest("GET", "https://audhemblny.localtunnel.me/flowmodel-flat/snfpucovcifzqxszthyegdbylnvrwuwugybnxymjbrnswxdniz",null, null,successCallback, errorCallback);
+        var baseUrl = 'http://192.168.0.80:4567/';
+
+        var runFlo = function(nodeId, successCallback, errorCallback) {
+            return makeServiceRequest("GET", baseUrl+"flowmodel-run/:nodeId", {nodeId : nodeId}, null, successCallback, errorCallback);
+        };
+
+        var getNode = function(nodeId, successCallback, errorCallback) {
+            return makeServiceRequest("GET", baseUrl+"flowmodel-flat/:nodeId", {nodeId : nodeId}, null, successCallback, errorCallback);
+        };
+
+        var addNode = function(node, successCallback, errorCallback) {
+            return makeServiceRequest("GET", baseUrl+"flowmodel-append", null, node, successCallback, errorCallback);
+        };
+
+        var removeNode = function(floId, nodeId, successCallback, errorCallback) {
+            var params = {
+                flow_id: floId,
+                child_id: nodeId
+            };
+            return makeServiceRequest("DELETE", baseUrl+"flowmodel-delete", null, params, successCallback, errorCallback);
         };
 
         return {
-            getNodes: getNodes
+            runFlo: runFlo,
+            getNode: getNode,
+            addNode: addNode,
+            removeNode: removeNode
         }
     }]);
 ;

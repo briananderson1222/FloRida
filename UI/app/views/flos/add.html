@@ -3,7 +3,8 @@
         <div style="display:table-cell;">
             <div class="flo-information">
                 <span>Name:</span>
-                <input type="text" name="flo-name" />
+                <input type="text" name="flo-name" value="{{flo.name}}" disabled="disabled" />
+                <button ng-click="runFlo()">Run Flow</button>
             </div>
             <div class="flo-scratchpaper">
                 <h4>Scratch Paper</h4>
@@ -22,15 +23,11 @@
                 </ul>
             </div>
         </div>
-        <button ng-click="addEndpoint()">Add Endpoint</button>
-        <button ng-click="addAction()">Add Action</button>
         <div style="display:table-cell;">
             <div style="display:table;">
                 <div class="flo-node-row" ng-repeat="nodes in nodesHierarchy">
                     <div class="flo-node" ng-repeat="node in nodes">
-                        <!--<div ng-include="{{ node.node_type }}"></div>-->
-                        <h3>{{ node.name }}</h3>
-                        <p>{{ node.request_method }} {{ node.url }}</p>
+                        <div ng-include="templateForNode(node)"></div>
                     </div>
                 </div>
             </div>
