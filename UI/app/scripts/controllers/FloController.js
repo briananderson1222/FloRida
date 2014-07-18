@@ -13,4 +13,7 @@ angular.module('floRidaApp')
   })
   .controller('MyController', function ($scope) {
     $scope.headers = [{"key":'',"value":''}]
-    });
+  })
+.controller('FloAddActionCtrl', function ($scope) {
+
+});

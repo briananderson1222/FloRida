@@ -25,6 +25,10 @@ angular.module('floRidaApp', [
                     }
                 }
             })
+            .state('flosAddAction', {
+                url: "/flosAddAction",
+                templateUrl: "views/flos/flosAddAction.html"
+            })
             .state('addEndPoint', {
                 url: "/addEndpoint",
                 templateUrl: "views/flos/addEndPoint.html"
