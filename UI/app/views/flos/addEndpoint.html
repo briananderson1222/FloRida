@@ -2,13 +2,14 @@
     <h1 class="text-center">Add Endpoint</h1>
 
 </header>
+<body>
 <div class="container">
 
     <div ng-controller="addEndPointController" >
-            <div class="endPointRow"><span>Name:</span> <input type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
+            <div class="endPointRow"><label class="LabelLayout">Name:</label> <input size="50" type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
 
-            <div class="endPointRow"><span>URL: </span><input type="text" name="endPointUrl"  ng-model="addEndPoint.url"> </div>
-            <div class="endPointRow"><span>Request Method:</span> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod">
+            <div class="endPointRow"><label class="LabelLayout" style="padding-right: 2px">URL:</label><input  size="50" type="text" name="endPointUrl"  ng-model="addEndPoint.url"> </div>
+            <div class="endPointRow"><label>Request Method:</label> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod">
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
                             </select>
@@ -52,3 +53,4 @@
 
 
 </div>
+</body>
