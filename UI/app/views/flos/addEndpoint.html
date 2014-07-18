@@ -3,12 +3,12 @@
 
 </header>
 <body>
-<div class="container">
+<div class="containerWithMargins">
 
     <div ng-controller="addEndPointController" >
-            <div class="endPointRow"><label class="LabelLayout">Name:</label> <input size="50" type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
+            <div class="endPointRow"><label class="LabelLayout">Name:</label> <input size="80" type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
 
-            <div class="endPointRow"><label class="LabelLayout" style="padding-right: 2px">URL:</label><input  size="50" type="text" name="endPointUrl"  ng-model="addEndPoint.url"> </div>
+            <div class="endPointRow"><label class="LabelLayout" style="width: 53px">URL:</label><input  size="80" type="text" name="endPointUrl"  ng-model="addEndPoint.url" value="https://"> </div>
             <div class="endPointRow"><label>Request Method:</label> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod">
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
@@ -21,10 +21,10 @@
             <li ng-repeat="header in headers">
                 <div>
                     <span>Key:</span>
-                    <input type="text" name="header-key" value="{{header.key}}" />
+                    <input size="33" type="text" name="header-key" value="{{header.key}}" />
 
                     <span>Value:</span>
-                    <input type="text" name="header-value" value="{{header.value}}" />
+                    <input size="33" type="text" name="header-value" value="{{header.value}}" />
                 </div>
             </li>
             </ul>
@@ -33,16 +33,16 @@
             <li ng-repeat="parameter in parameters">
                 <div>
                     <span>Key:</span>
-                    <input type="text" name="parameter-key" value="{{parameter.key}}" />
+                    <input size="33" type="text" name="parameter-key" value="{{parameter.key}}" />
 
                     <span>Value:</span>
-                    <input type="text" name="parameter-value" value="{{parameter.value}}" />
+                    <input size="33" type="text" name="parameter-value" value="{{parameter.value}}" />
                 </div>
             </li>
         </ul>
         <div>Request Body </div>
-        <div>
-            <textarea rows="4" cols="66"  name="requestBody" ng-model="requestBody"  value="" />
+        <div style="padding-left: 15px">
+            <textarea rows="4" cols="85"  name="requestBody" ng-model="requestBody"  value="" />
         </div>
 
 
