@@ -15,13 +15,25 @@ module FlowModelDAO
     }
   end
 
+  def flow_collection
+    mongo_details = client
+    mongo_details[:db].collection('flow_model')
+  end
 
   def save_flow_model(flow_model)
     mongo_details = client
     model_id = flow_model.id.nil? ? (0...50).map { ('a'..'z').to_a[rand(26)] }.join : flow_model.id
     flow_model.id = model_id
-    mongo_details[:db].collection('flow_model').find_and_modify({ :query => { :id => flow_model.id }, :update => flow_model.to_hash, :upsert => true })
+    flow_collection.find_and_modify({ :query => { :id => flow_model.id }, :update => flow_model.to_hash, :upsert => true })
+    flow_model
   end
 
+  def find_by_flow_id(flow_id)
+    puts flow_id
+    test = flow_collection.find_one({ 'id' => flow_id })
+    puts test.inspect
+      FlowModel.from_hash(flow_collection.find_one({ 'id' => flow_id }))
+
+  end
 
 end
