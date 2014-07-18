@@ -11,6 +11,15 @@ angular.module('floRidaApp')
           $scope.scratches.unshift({key:'',value:''});
         };
   })
-  .controller('MyController', function ($scope) {
-    $scope.headers = [{"key":'',"value":''}]
+  .controller('addEndPointController', function ($scope) {
+        $scope.headers = [{key:'',value:''}];
+
+        $scope.addHeader = function() {
+            $scope.headers.unshift({key:'',value:''});
+        };
+        $scope.parameters = [{key:'',value:''}];
+
+        $scope.addParameter = function() {
+            $scope.parameters.unshift({key:'',value:''});
+        };
     });
