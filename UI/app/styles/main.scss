@@ -1,3 +1,17 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
+
+form {
+  width: 80%;
+  max-width: 40em;
+  margin: 0 auto;
+  color: #3f3a27;
+  padding: 0.5em;
+}
+
+label {
+  width: 30%;
+  text-align: right;
+  margin: 0 10% 0 0;
+}
