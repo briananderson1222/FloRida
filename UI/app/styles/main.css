@@ -6,6 +6,11 @@ Syntax error: File to import not found or unreadable: sass-bootstrap/lib/bootstr
 1: $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 2: 
 3: @import 'sass-bootstrap/lib/bootstrap';
+4: 
+5: 
+6: .flo-node-row {
+7:   display: table-row;
+8: }
 
 Backtrace:
 main.scss:3
@@ -48,4 +53,4 @@ main.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: sass-bootstrap/lib/bootstrap.\A               Load path: /Users/briananderson/Desktop/ExpressDay/FloRida/UI/app/styles\A         on line 3 of main.scss\A \A 1: $icon-font-path: \"/bower_components/sass-bootstrap/fonts/\";\A 2: \A 3: @import 'sass-bootstrap/lib/bootstrap';"; }
+  content: "Syntax error: File to import not found or unreadable: sass-bootstrap/lib/bootstrap.\A               Load path: /Users/briananderson/Desktop/ExpressDay/FloRida/UI/app/styles\A         on line 3 of main.scss\A \A 1: $icon-font-path: \"/bower_components/sass-bootstrap/fonts/\";\A 2: \A 3: @import 'sass-bootstrap/lib/bootstrap';\A 4: \A 5: \A 6: .flo-node-row {\A 7:   display: table-row;\A 8: }"; }

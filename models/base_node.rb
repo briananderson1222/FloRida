@@ -8,7 +8,12 @@ class BaseNode
     @id = id
   end
 
+  def can_run(input)
+    true
+  end
+
   def run
+    return nil
   end
 
   def to_hash

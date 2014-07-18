@@ -1,6 +1,9 @@
 require_relative 'base_node'
+require_relative '../util/service'
 
 class EndpointNode < BaseNode
+
+include Service
 
 attr_accessor :url, :request_method, :body, :headers, :parameters
 
@@ -22,6 +25,23 @@ attr_accessor :url, :request_method, :body, :headers, :parameters
     hash['parameters'] = parameters
     hash['node_type'] = 'endpoint'
     hash
+  end
+
+  def can_run(input)
+    true
+  end
+
+  def run(input)
+    request = http_request(url, @request_method, @query_params, @headers, @body)
+    response = {
+      'status_code' => request.code,
+      'headers' => request.headers,
+      'query_parameters' => @query_parameters,
+      'request_method' => @request_method,
+      'url' => url
+    }
+
+    { 'response' => response }
   end
 
   def self.child_nodes_to_hash(child_hash_arr)
