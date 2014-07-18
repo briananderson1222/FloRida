@@ -3,14 +3,14 @@ require_relative 'spec_helper'
 describe FlowModel do
 
   before :each do
-    a = ActionNode.new('id', 'name', [], 'status', 'type', '3305196772')
-    e = EndpointNode.new('id', 'name', [a], 'http://', 'GET', 'body', { 'Content-Type' => 'application/json' }, {  'q' => 'apple' })
+    a = ActionNode.new('id_2', 'Text Message', [], 200, 'text', '3305196772')
+    e = EndpointNode.new('id_1', 'name', [a], 'http://www.google.com', 'GET', '', {  }, {  })
     @flow = FlowModel.new(nil,"kelton", e)
   end
 
-  describe '#print_nodes' do
+  describe '#run' do
     it 'flats the flow model' do
-      puts @flow.flat.inspect
+      @flow.run
     end
   end
 

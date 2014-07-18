@@ -22,8 +22,9 @@ label, button {
 }
 
 .LabelFormCombo {
-  width: 12%;
+  width: 140px;
   text-align: left;
+  margin-left: 5;
 }
 .LabelLayout {
   width: 50px;
@@ -49,4 +50,12 @@ label, button {
   display: table-cell;
   height: 150px;
   width: 150px;
+}
+
+.buttonCenter {
+  width: 100%;
+}
+
+.containerWithMargins {
+  padding: 0 15px;
 }
