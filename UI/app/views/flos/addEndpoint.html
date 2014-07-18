@@ -5,10 +5,10 @@
 <div class="container">
 
     <div ng-controller="addEndPointController" >
-            <div><span>Name:</span> <input type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
+            <div><span >Name:</span> <input type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
 
             <div><span>URL: </span><input type="text" name="endPointUrl"  ng-model="addEndPoint.url"> </div>
-            <div><span>Request Method:</span> <select ng-model="addEndPoint.requestMethod">
+            <div><span>Request Method:</span> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod" >
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
                             </select></div>
@@ -26,7 +26,7 @@
                 </div>
             </li>
             </ul>
-        <div>Parameters  <span ng-click="addParameter()">    Add</span></div>
+        <div>Parameters  <span ng-click="addParameter()">Add</span></div>
         <ul>
             <li ng-repeat="parameter in parameters">
                 <div>
@@ -39,6 +39,15 @@
             </li>
         </ul>
         <div>Request Body </div>
+        <div>
+            <input type="text" name="requestBody" ng-model="requestBody"  value="" size="90" />
+        </div>
+
+        <div>Save to Scratch Paper</div>
+
+
+
+        <div><span ng-click="saveEndPoint()">Save</span></div></div>
     </div>
 
 </div>

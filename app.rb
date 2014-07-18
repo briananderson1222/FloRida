@@ -51,6 +51,10 @@ post '/flowmodel/?' do
     JSON.generate(flow.to_hash)
 end
 
+get '/flowmodel-flat/?' do
+
+end
+
 before do
   headers 'Access-Control-Allow-Origin' => '*', 'Access-Control-Allow-Methods' => ['OPTIONS', 'GET', 'POST']
   EnvReader.instance.read_env
