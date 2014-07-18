@@ -13,7 +13,7 @@
             <div class="endPointRow"><label class="LabelLayout">Name:</label> <input size="80" type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
 
             <div class="endPointRow"><label class="LabelLayout" style="width: 53px">URL:</label><input  size="80" type="text" name="endPointUrl"  ng-model="addEndPoint.url" value="https://"> </div>
-            <div class="endPointRow"><label>Request Method:</label> <select ng-init="options[0]" ng-model="addEndPoint.requestMethod">
+            <div class="endPointRow"><label>Request Method:</label> <select ng-init="options[0]" ng-model="addEndPoint.request_method">
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
                             </select>
@@ -48,7 +48,7 @@
         <div style="padding-left: 15px">
             <textarea rows="4" cols="85"  name="requestBody" ng-model="addEndPoint.body"  value="" />
         </div>
-
+        <div style="height: 10px;"></div>
 
 
         <!--<div id="saveButton" class="button"><span ng-click="saveEndPoint()">Save</span></div>-->
@@ -57,5 +57,5 @@
 
 
 </div>
-<button class="button" ng-click="saveEndPoint()">Save</button>
+<button class="button" ng-click="saveEndPoint()">SAVE</button>
 </body>
