@@ -15,5 +15,7 @@ angular.module('floRidaApp')
     $scope.headers = [{"key":'',"value":''}]
   })
 .controller('FloAddActionCtrl', function ($scope) {
-
+        $scope.saveClicked = function() {
+            console.log("Button Clicked")
+        };
 });
