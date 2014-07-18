@@ -4,7 +4,7 @@ require 'json'
 
 class FlowModel
 
-  attr_accessor :name, :id, :initial_node_id
+  attr_accessor :name, :id, :initial_node
 
   def initialize(id, name, initial_node)
     @name = name
@@ -33,9 +33,14 @@ class FlowModel
     end
   end
 
-  def insert_child_node(parent_id,child_node)
-
-    FlowModel.insert_child_helper(@initial_node,parent_id,child_node)
+  def insert_child_node(parent_id, child_node)
+    if parent_id.nil?
+      child_id = child_node.id.nil? ? (0...50).map { ('a'..'z').to_a[rand(26)] }.join : child_node.id
+      child_node.id = child_id
+      @initial_node = child_node
+    else
+      FlowModel.insert_child_helper(@initial_node,parent_id,child_node)
+    end
   end
 
   def self.insert_child_helper(node,parent_id,child_node)
