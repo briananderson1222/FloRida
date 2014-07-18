@@ -8,16 +8,20 @@ angular.module('floRidaApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider) {
         // For any unmatched url, redirect to /state1
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise("/flos");
         //
         // Now set up the states
         $stateProvider
             .state('flos', {
-                url: "/",
+                url: "/flos",
                 templateUrl: "views/flos/index.html"
             })
             .state('flos.add', {
-                url: "/",
-                templateUrl: "views/flos/add.html"
+                url: "/add",
+                views: {
+                    '': {
+                        templateUrl: "views/flos/add.html"
+                    }
+                }
             })
   });
