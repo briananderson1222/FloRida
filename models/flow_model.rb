@@ -33,6 +33,23 @@ class FlowModel
     end
   end
 
+  def insert_child_node(parent_id,child_node)
+
+    FlowModel.insert_child_helper(@initial_node,parent_id,child_node)
+  end
+
+  def self.insert_child_helper(node,parent_id,child_node)
+    if(node.id == parent_id)
+      puts "FOUND"
+      child_id = child_node.id.nil? ? (0...50).map { ('a'..'z').to_a[rand(26)] }.join : child_node.id
+      child_node.id = child_id
+      node.child_nodes << child_node
+    end
+    node.child_nodes.each do |x|
+      FlowModel.insert_child_helper(x,parent_id,child_node)
+    end
+  end
+
   def flat
     big_arr = []
     addition =  []
@@ -49,7 +66,7 @@ class FlowModel
     new_addition = []
     big_arr << new_addition
     node.child_nodes.each do |x|
-      FlowModel.flat_helper(x, big_arr, new_addition, x.id)
+      FlowModel.flat_helper(x, big_arr, new_addition, node.id)
     end
   end
 
