@@ -28,11 +28,13 @@ attr_accessor :status, :type, :parameter
   end
 
   def run(input)
-    code = input['response']['status_code']
-    url = input['response']['url']
-    method = input['response']['request_method']
-    text_message = '%s %s %s' % [method, url, code]
-    send_text_message(parameter, text_message)
+    if type == 'text'
+      code = input['response']['status_code']
+      url = input['response']['url']
+      method = input['response']['request_method']
+      text_message = '%s %s %s' % [method, url, code]
+      send_text_message(parameter, text_message)
+    end
     input
   end
 
