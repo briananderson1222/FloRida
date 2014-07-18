@@ -55,6 +55,21 @@ class FlowModel
     end
   end
 
+  def delete_child_node(child_id)
+
+    FlowModel.delete_child_helper(@initial_node,child_id)
+  end
+
+  def self.delete_child_helper(node,child_id)
+    node.child_nodes.each do |x|
+      if(x.id == child_id)
+        node.child_nodes.delete(x)
+      else
+        FlowModel.delete_child_helper(x,parent_id,child_node)
+      end
+    end
+  end
+
   def flat
     big_arr = []
     addition =  []

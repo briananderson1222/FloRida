@@ -1,11 +1,15 @@
-<header>
+<div class="containerWithMargins modalContainer">
+    <header>
+
     <h1 class="text-center">Add Endpoint</h1>
 
 </header>
-<body>
-<div class="containerWithMargins">
 
-    <div ng-controller="addEndPointController" >
+
+<body>
+
+
+    <div>
             <div class="endPointRow"><label class="LabelLayout">Name:</label> <input size="80" type="text" name="endPointName" ng-model="addEndPoint.name"> </div>
 
             <div class="endPointRow"><label class="LabelLayout" style="width: 53px">URL:</label><input  size="80" type="text" name="endPointUrl"  ng-model="addEndPoint.url" value="https://"> </div>
@@ -18,7 +22,7 @@
             <div class="endPointRow">Headers  <span ng-click="addHeader()">    Add</span></div>
 
             <ul>
-            <li ng-repeat="header in headers">
+            <li ng-repeat="header in addEndPoint.headers">
                 <div>
                     <span>Key:</span>
                     <input size="33" type="text" name="header-key" value="{{header.key}}" />
@@ -30,7 +34,7 @@
             </ul>
         <div class="endPointRow">Parameters  <span ng-click="addParameter()">Add</span></div>
         <ul>
-            <li ng-repeat="parameter in parameters">
+            <li ng-repeat="parameter in addEndPoint.parameters">
                 <div>
                     <span>Key:</span>
                     <input size="33" type="text" name="parameter-key" value="{{parameter.key}}" />
@@ -42,15 +46,16 @@
         </ul>
         <div>Request Body </div>
         <div style="padding-left: 15px">
-            <textarea rows="4" cols="85"  name="requestBody" ng-model="requestBody"  value="" />
+            <textarea rows="4" cols="85"  name="requestBody" ng-model="addEndPoint.body"  value="" />
         </div>
 
 
 
-        <div id="saveButton"><span ng-click="saveEndPoint()">Save</span></div>
+        <!--<div id="saveButton" class="button"><span ng-click="saveEndPoint()">Save</span></div>-->
     </div>
 
 
 
 </div>
+<button class="button" ng-click="saveEndPoint()">Save</button>
 </body>
