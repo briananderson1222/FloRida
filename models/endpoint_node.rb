@@ -41,7 +41,8 @@ attr_accessor :url, :request_method, :body, :headers, :parameters
       'url' => url
     }
 
-    { 'response' => response }
+    x = { 'response' => response }
+    x
   end
 
   def self.child_nodes_to_hash(child_hash_arr)
