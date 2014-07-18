@@ -1,0 +1,27 @@
+<div style="display:table;">
+    <div style="display:table-row;">
+        <div style="display:table-cell;">
+            <div class="flo-information">
+                <span>Name:</span>
+                <input type="text" name="flo-name" />
+            </div>
+            <div class="flo-scratchpaper">
+                <h4>Scratch Paper</h4>
+                <span ng-click="addScratch()">Add</span>
+                <ul>
+                    <li ng-repeat="scratch in scratches">
+                        <div>
+                            <span>Key:</span>
+                            <input type="text" name="scratch-key" value="{{scratch.key}}" />
+                        </div>
+                        <div>
+                            <span>Value:</span>
+                            <input type="text" name="scratch-value" value="{{scratch.value}}" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="display:table-cell;"></div>
+    </div>
+</div>
