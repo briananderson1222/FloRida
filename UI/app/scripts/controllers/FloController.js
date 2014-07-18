@@ -43,6 +43,7 @@ angular.module('floRidaApp')
 
         $scope.addAction = function() {
             var modalInstance = $modal.open({
+                controller:'FloAddActionCtrl',
                 templateUrl: 'views/flos/flosAddAction.html'
             });
             modalInstance.result.then();
@@ -75,8 +76,9 @@ angular.module('floRidaApp')
         }
     })
 
-    .controller('FloAddActionCtrl', function ($scope) {
+    .controller('FloAddActionCtrl', function ($scope, $modalInstance) {
+        $scope.addActionModel = {};
         $scope.saveClicked = function() {
-            console.log("Button Clicked")
+            $modalInstance.close($scope.addActionModel);
         };
     });
