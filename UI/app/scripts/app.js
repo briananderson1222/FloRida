@@ -14,12 +14,13 @@ angular.module('floRidaApp', [
         $stateProvider
             .state('flos', {
                 url: "/flos",
-                templateUrl: "views/flos/index.html"
+                templateUrl: "views/template.html",
+                controller: 'FloCtrl'
             })
             .state('flos.add', {
                 url: "/add",
                 views: {
-                    '': {
+                    'container': {
                         templateUrl: "views/flos/add.html"
                     }
                 }
