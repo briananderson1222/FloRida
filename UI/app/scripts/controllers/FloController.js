@@ -22,6 +22,9 @@ angular.module('floRidaApp')
         $scope.addParameter = function() {
             $scope.parameters.unshift({key:'',value:''});
         };
+
+
+
     })
 
     .controller('FloAddActionCtrl', function ($scope) {
