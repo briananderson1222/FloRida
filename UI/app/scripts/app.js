@@ -24,4 +24,8 @@ angular.module('floRidaApp', [
                     }
                 }
             })
+            .state('addEndPoint', {
+                url: "/addEndpoint",
+                templateUrl: "views/flos/addEndPoint.html"
+            })
   });
