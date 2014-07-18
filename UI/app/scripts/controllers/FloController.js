@@ -60,6 +60,11 @@ angular.module('floRidaApp')
 
     .controller('addEndPointController', function ($scope, $modalInstance) {
         $scope.addEndPoint = {};
+        $scope.request_methods = [
+            {key:'GET', value:'GET'},
+            {key:'POST', value:'POST'}
+        ];
+        $scope.addEndPoint.request_method = $scope.request_methods[0];
         $scope.addEndPoint.headers = [{key:'',value:''}];
 
         $scope.addHeader = function() {
