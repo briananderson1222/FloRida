@@ -43,6 +43,7 @@ angular.module('floRidaApp')
 
         $scope.addAction = function() {
             var modalInstance = $modal.open({
+                controller:'FloAddActionCtrl',
                 templateUrl: 'views/flos/flosAddAction.html'
             });
             modalInstance.result.then();
@@ -60,6 +61,11 @@ angular.module('floRidaApp')
 
     .controller('addEndPointController', function ($scope, $modalInstance) {
         $scope.addEndPoint = {};
+        $scope.request_methods = [
+            {key:'GET', value:'GET'},
+            {key:'POST', value:'POST'}
+        ];
+        $scope.addEndPoint.request_method = $scope.request_methods[0];
         $scope.addEndPoint.headers = [{key:'',value:''}];
 
         $scope.addHeader = function() {
@@ -75,8 +81,9 @@ angular.module('floRidaApp')
         }
     })
 
-    .controller('FloAddActionCtrl', function ($scope) {
+    .controller('FloAddActionCtrl', function ($scope, $modalInstance) {
+        $scope.addActionModel = {};
         $scope.saveClicked = function() {
-            console.log("Button Clicked")
+            $modalInstance.close($scope.addActionModel);
         };
     });
