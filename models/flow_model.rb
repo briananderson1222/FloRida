@@ -58,5 +58,18 @@ class FlowModel
     FlowModel.new(hash['id'], hash['name'], hash['initial_node']['node_type'] == 'endpoint' ? EndpointNode.from_hash(hash['initial_node']) : ActionNode.from_hash(hash['initial_node']) )
   end
 
+  def run
+    FlowModel.run_helper(@initial_node, nil)
+  end
+
+  def self.run_helper(node, input)
+    if node.can_run(input)
+      new_input = node.run(input)
+      node.child_nodes.each do |child|
+        FlowModel.run_helper(child, new_input)
+      end
+    end
+end
+
 
 end
