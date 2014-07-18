@@ -36,3 +36,13 @@ label, button {
 .endPointRow {
   padding-bottom: 10px;
 }
+
+.flo-node-row {
+  display: table-row;
+}
+
+.flo-node {
+  display: table-cell;
+  height: 150px;
+  width: 150px;
+}

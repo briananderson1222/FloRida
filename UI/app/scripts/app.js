@@ -4,18 +4,29 @@ angular.module('floRidaApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ui.router'
+  'ui.router',
+  'ui.bootstrap.tpls',
+  'ui.bootstrap.modal'
 ])
   .config(function ($stateProvider, $urlRouterProvider) {
-        // For any unmatched url, redirect to /state1
+
+        // For any unmatched url
         $urlRouterProvider.otherwise("/flos");
         //
         // Now set up the states
         $stateProvider
             .state('flos', {
                 url: "/flos",
-                templateUrl: "views/template.html",
-                controller: 'FloCtrl'
+                views: {
+                    '': {
+                        templateUrl: "views/template.html",
+                        controller: 'FloCtrl'
+                    },
+                    'container@flos': {
+                        templateUrl: "views/flos/index.html"
+                    }
+                }
+
             })
             .state('flos.add', {
                 url: "/add",
