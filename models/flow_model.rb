@@ -45,7 +45,6 @@ class FlowModel
 
   def self.insert_child_helper(node,parent_id,child_node)
     if(node.id == parent_id)
-      puts "FOUND"
       child_id = child_node.id.nil? ? (0...50).map { ('a'..'z').to_a[rand(26)] }.join : child_node.id
       child_node.id = child_id
       node.child_nodes << child_node

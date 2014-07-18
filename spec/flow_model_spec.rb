@@ -22,8 +22,8 @@ describe FlowModel do
     e1 = EndpointNode.new('e1', 'name', [a1, a2], login_url, 'POST', '', {  }, {  })
 
     @flow = FlowModel.new(nil,"kelton", e1)
-    #out = save_flow_model(@flow)
-    #puts out.inspect
+    out = save_flow_model(@flow)
+    puts out.inspect
 
   end
 
