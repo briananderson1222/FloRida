@@ -7,6 +7,7 @@ body {
   font-family: $floRidaFont;
   font-size: 14px;
   font-weight: 300;
+  color: #585860
 }
 
 .normal {
@@ -31,6 +32,10 @@ label, button {
   text-align: left;
 }
 
+.inputArrayType {
+  width: 50px;
+}
+
 #saveButton {
   text-align: center;
   width: 540px;
@@ -52,10 +57,17 @@ label, button {
   width: 150px;
 }
 
-.buttonCenter {
+.button {
   width: 100%;
+  background-color: #F2534C;
+  border-color: #F2534C;
+  border: 0px;
 }
 
 .containerWithMargins {
-  padding: 0 15px;
+   padding: 0 15px;
+ }
+
+.modalContainer {
+  background-color: #B0B3B4;
 }
