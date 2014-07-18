@@ -28,12 +28,18 @@ post '/flowmodel/?' do
 end
 
 post '/flowmodel-append/?' do
-  data = JSON.parse(request.body.read)
+    data = JSON.parse(request.body.read)
     flow = find_by_flow_id(params[:flow_id])
     child_hash = JSON.parse(params[:child_id])
     child_node = child_hash['node_type'] == 'endpoint' ? EndpointNode.from_hash(x) : ActionNode.from_hash(child_hash)
     flow.insert_child_node(params[:parent_id], child_node)
     save_flow_model(flow)
+    redirect '/flowmodel-flat/%s/' % [params[:flow_id]]
+end
+
+delete '/flowmodel-delete/?' do
+    flow = find_by_flow_id(params[:flow_id])
+    flow.delete_child_node(params[:child_id])
     redirect '/flowmodel-flat/%s/' % [params[:flow_id]]
 end
 
