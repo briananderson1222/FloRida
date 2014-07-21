@@ -32,6 +32,7 @@ attr_accessor :url, :request_method, :body, :headers, :parameters
   end
 
   def run(input)
+    puts input
     request = http_request(url, @request_method, @query_params, @headers, @body)
     response = {
       'status_code' => request.code,

@@ -29,11 +29,8 @@ module FlowModelDAO
   end
 
   def find_by_flow_id(flow_id)
-    puts flow_id
     test = flow_collection.find_one({ 'id' => flow_id })
-    puts test.inspect
-      FlowModel.from_hash(flow_collection.find_one({ 'id' => flow_id }))
-
+    FlowModel.from_hash(flow_collection.find_one({ 'id' => flow_id }))
   end
 
 end

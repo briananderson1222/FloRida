@@ -73,19 +73,21 @@ class FlowModel
     big_arr = []
     addition =  []
     big_arr << addition
-    FlowModel.flat_helper(@initial_node, big_arr, addition, nil)
-    big_arr
+    FlowModel.flat_helper(@initial_node, big_arr, nil, 0)
+    big_arr.select{|x| x.length > 0 }
   end
 
-  def self.flat_helper(node, big_arr, addition, parent_id)
+  def self.flat_helper(node, big_arr, parent_id, depth)
     hash = node.to_hash
     hash['parent_id'] = parent_id
     hash_child_nodes = hash.delete('child_nodes')
-    addition << hash
     new_addition = []
     big_arr << new_addition
-    node.child_nodes.each do |x|
-      FlowModel.flat_helper(x, big_arr, new_addition, node.id)
+    big_arr[depth] << hash
+    if node.child_nodes.length > 0
+      node.child_nodes.each do |x|
+        FlowModel.flat_helper(x, big_arr, node.id, depth + 1)
+      end
     end
   end
 
