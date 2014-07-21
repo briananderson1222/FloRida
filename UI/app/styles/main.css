@@ -1,19 +1,20 @@
 /*
 Syntax error: File to import not found or unreadable: sass-bootstrap/lib/bootstrap.
               Load path: /Users/briananderson/Desktop/ExpressDay/FloRida/UI/app/styles
-        on line 3 of main.scss
+        on line 4 of main.scss
 
 1: $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
-2: 
-3: @import 'sass-bootstrap/lib/bootstrap';
-4: 
+2: $floRidaFont: 'Oswald', sans-serif;
+3: 
+4: @import 'sass-bootstrap/lib/bootstrap';
 5: 
-6: .flo-node-row {
-7:   display: table-row;
-8: }
+6: body {
+7:   font-family: $floRidaFont;
+8:   font-size: 14px;
+9:   font-weight: 300;
 
 Backtrace:
-main.scss:3
+main.scss:4
 /Users/briananderson/.rvm/gems/ruby-1.9.3-p429/gems/sass-3.2.1/lib/sass/tree/import_node.rb:64:in `rescue in import'
 /Users/briananderson/.rvm/gems/ruby-1.9.3-p429/gems/sass-3.2.1/lib/sass/tree/import_node.rb:42:in `import'
 /Users/briananderson/.rvm/gems/ruby-1.9.3-p429/gems/sass-3.2.1/lib/sass/tree/import_node.rb:25:in `imported_file'
@@ -53,4 +54,4 @@ main.scss:3
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: File to import not found or unreadable: sass-bootstrap/lib/bootstrap.\A               Load path: /Users/briananderson/Desktop/ExpressDay/FloRida/UI/app/styles\A         on line 3 of main.scss\A \A 1: $icon-font-path: \"/bower_components/sass-bootstrap/fonts/\";\A 2: \A 3: @import 'sass-bootstrap/lib/bootstrap';\A 4: \A 5: \A 6: .flo-node-row {\A 7:   display: table-row;\A 8: }"; }
+  content: "Syntax error: File to import not found or unreadable: sass-bootstrap/lib/bootstrap.\A               Load path: /Users/briananderson/Desktop/ExpressDay/FloRida/UI/app/styles\A         on line 4 of main.scss\A \A 1: $icon-font-path: \"/bower_components/sass-bootstrap/fonts/\";\A 2: $floRidaFont: 'Oswald', sans-serif;\A 3: \A 4: @import 'sass-bootstrap/lib/bootstrap';\A 5: \A 6: body {\A 7:   font-family: $floRidaFont;\A 8:   font-size: 14px;\A 9:   font-weight: 300;"; }
